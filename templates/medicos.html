@@ -1,0 +1,26 @@
+<h1>Médicos de {{ servicio }}</h1>
+<ul>
+    {% for m in medicos %}
+        <li>
+            <a href="{{ url_for('medicos', servicio=servicio, medico=m) }}">{{ m }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+{% if medico %}
+<h1>Horarios disponibles para {{ medico }}</h1>
+
+{% if horarios %}
+<form action="/reservar" method="post">
+    <input type="hidden" name="medico" value="{{ medico }}">
+    <select name="hora">
+        {% for h in horarios %}
+        <option value="{{ h }}">{{ h }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Reservar</button>
+</form>
+{% else %}
+<p>No hay horarios disponibles.</p>
+{% endif %}
+{% endif %}

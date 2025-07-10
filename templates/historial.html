@@ -1,0 +1,7 @@
+<h1>Historial de diagnósticos de {{ medico }}</h1>
+<a href="{{ url_for('citas', medico=medico) }}">Volver a ver citas</a>
+<ul>
+    {% for d in diagnosticos %}
+        <li>{{ d['Paciente'] }} – {{ d['Hora'] }} – {{ d['Enfermedad'] }}</li>
+    {% endfor %}
+</ul>

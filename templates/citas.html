@@ -1,0 +1,20 @@
+<h1>Citas de {{ medico }}</h1>
+
+<p>
+    <a href="{{ url_for('historial', medico=medico) }}">📋 Ver historial de diagnósticos</a>
+</p>
+
+{% if reservas %}
+<ul>
+    {% for r in reservas %}
+    <li>
+        Hora: {{ r }}
+        <a href="{{ url_for('formulario_diagnostico', medico=medico, hora=r) }}">Atender</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No hay horarios reservados para este médico.</p>
+{% endif %}
+
+

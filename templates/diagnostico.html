@@ -1,0 +1,18 @@
+<h1>Diagnóstico</h1>
+{% if medico and hora %}
+    <p>Atendiendo a la reserva de <strong>{{ medico }}</strong> a las <strong>{{ hora }}</strong></p>
+{% endif %}
+<form method="POST" action="/diagnosticar">
+  <input type="hidden" name="medico" value="{{ medico }}">
+  <input type="hidden" name="hora" value="{{ hora }}">
+
+  Nombre: <input type="text" name="nombre"><br><br>
+  
+  <label><input type="checkbox" name="sintomas" value="fiebre"> Fiebre</label><br>
+  <label><input type="checkbox" name="sintomas" value="tos"> Tos</label><br>
+  <label><input type="checkbox" name="sintomas" value="dolor_cabeza"> Dolor de cabeza</label><br>
+  <label><input type="checkbox" name="sintomas" value="congestion"> Congestión</label><br>
+  <label><input type="checkbox" name="sintomas" value="dificultad_respirar"> Dificultad para respirar</label><br>
+  <label><input type="checkbox" name="sintomas" value="perdida_olfato">Perdida de olfato</label><br>
+  <button type="submit">Diagnosticar</button>
+</form>

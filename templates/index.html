@@ -1,0 +1,6 @@
+<h1>Selecciona un servicio</h1>
+<ul>
+    {% for s in servicios %}
+        <li><a href="/medicos?servicio={{ s }}">{{ s|capitalize }}</a></li>
+    {% endfor %}
+</ul>

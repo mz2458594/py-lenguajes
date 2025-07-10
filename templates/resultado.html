@@ -1,0 +1,16 @@
+<a href="{{ url_for('citas', medico=medico) }}">Volver a ver citas</a>
+<h2>Diagnóstico para {{ nombre }}</h2>
+
+
+{% if enfermedades %}
+  <p>Atendido por <strong>{{ medico }}</strong> a las <strong>{{ hora }}</strong>.</p>
+
+  <p>Podrías tener:</p>
+  <ul>
+    {% for e in enfermedades %}
+      <li>Enfermedad detectada: {{ e }}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No se pudo determinar una enfermedad con los síntomas dados.</p>
+{% endif %}
