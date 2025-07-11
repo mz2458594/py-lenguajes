@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Historial de {{ medico }}</title>
+    <title>Cita reservada</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -22,37 +22,14 @@
             </nav>
         </div>
     </header>
-
-    <!-- CONTENIDO -->
-    <main class="flex-grow px-6 py-10 max-w-4xl mx-auto">
-        <h1 class="text-3xl font-bold text-blue-700 mb-6 text-center">
-            Historial de diagnósticos de <span class="text-blue-900">{{ medico }}</span>
+    <div class="flex items-center justify-center mt-auto">
+        <h1 class="text-center text-4xl text-blue-600 font-medium p-5 bg-white border border-blue-200 rounded-xl">
+            Cita reservada con <span class="font-bold">{{ medico }}</span> a las <span class="font-bold">{{hora}}</span>
         </h1>
+    </div>
 
-        <div class="mb-6 text-center">
-            <a href="{{ url_for('citas', medico=medico) }}"
-                class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
-                ← Volver a ver citas
-            </a>
-        </div>
 
-        {% if diagnosticos %}
-        <ul class="space-y-4">
-            {% for d in diagnosticos %}
-            <li class="bg-white border border-blue-200 p-4 rounded-lg shadow-sm">
-                <p class="text-blue-900 font-semibold">👤 Paciente: {{ d['Paciente'] }}</p>
-                <p class="text-sm text-gray-600">🕒 Hora: {{ d['Hora'] }}</p>
-                <p class="text-sm text-gray-700">🩺 Diagnóstico: <span class="font-medium">{{ d['Enfermedad'] }}</span>
-                </p>
-            </li>
-            {% endfor %}
-        </ul>
-        {% else %}
-        <p class="text-center text-red-600 font-medium">No hay diagnósticos registrados para este médico.</p>
-        {% endif %}
-    </main>
 
-    <!-- FOOTER -->
     <footer class="bg-blue-700 text-white py-6 mt-auto">
         <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             <div>
@@ -75,7 +52,6 @@
             © 2025 Clínica Salud Total. Todos los derechos reservados.
         </div>
     </footer>
-
 </body>
 
 </html>

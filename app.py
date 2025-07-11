@@ -44,7 +44,7 @@ def reservar():
     medico = request.form["medico"]
     hora = request.form["hora"]
     prolog.assertz(f"reservado({medico}, '{hora}')")
-    return f"<h1>Cita reservada con {medico} a las {hora}</h1>"
+    return render_template("reservar.html", medico=medico, hora=hora)
 
 @app.route("/citas")
 def citas():
