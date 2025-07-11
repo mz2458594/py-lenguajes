@@ -1,6 +1,6 @@
-servicio(cardiologia).
-servicio(dermatologia).
-servicio(pediatria).
+servicio(cardiologia, 'https://mimed.do/media/blogs/n9wMqeTQHYFZReCz.jpg').
+servicio(dermatologia, 'https://dermatologia-bagazgoitia.com/wp-content/uploads/2022/02/dermatologo-scaled.jpg').
+servicio(pediatria, 'https://www.shutterstock.com/image-vector/stethoscope-baby-pediatric-health-services-260nw-2498667177.jpg').
 
 medico(juan, cardiologia).
 medico(lucia, dermatologia).

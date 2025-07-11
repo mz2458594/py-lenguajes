@@ -1,16 +1,84 @@
-<a href="{{ url_for('citas', medico=medico) }}">Volver a ver citas</a>
-<h2>Diagnóstico para {{ nombre }}</h2>
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+  <meta charset="UTF-8">
+  <title>Resultado del Diagnóstico</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-{% if enfermedades %}
-  <p>Atendido por <strong>{{ medico }}</strong> a las <strong>{{ hora }}</strong>.</p>
+<body class="bg-blue-50 flex flex-col min-h-screen">
 
-  <p>Podrías tener:</p>
-  <ul>
-    {% for e in enfermedades %}
-      <li>Enfermedad detectada: {{ e }}</li>
-    {% endfor %}
-  </ul>
-{% else %}
-  <p>No se pudo determinar una enfermedad con los síntomas dados.</p>
-{% endif %}
+  <!-- HEADER -->
+  <header class="bg-white shadow-md py-4">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6">
+      <div class="text-2xl font-bold text-blue-700">Clínica Salud Total</div>
+      <nav class="space-x-4 text-blue-700 font-medium">
+        <a href="/" class="hover:text-blue-500">Inicio</a>
+        <a href="/servicios" class="hover:text-blue-500">Servicios</a>
+        <a href="/medicos" class="hover:text-blue-500">Médicos</a>
+        <a href="/contacto" class="hover:text-blue-500">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="flex-grow px-6 py-10 max-w-3xl mx-auto">
+    <div class="mb-6">
+      <a href="{{ url_for('citas', medico=medico) }}"
+        class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
+        ← Volver a ver citas
+      </a>
+    </div>
+
+    <h2 class="text-2xl font-bold text-blue-800 mb-4">Diagnóstico para <span class="text-blue-900">{{ nombre }}</span>
+    </h2>
+
+    {% if enfermedades %}
+    <div class="bg-white p-6 rounded-lg shadow-md space-y-4 border border-blue-200">
+      <p class="text-blue-800">
+        Atendido por <strong>{{ medico }}</strong> a las <strong>{{ hora }}</strong>.
+      </p>
+
+      <p class="font-medium text-gray-700">Posibles enfermedades detectadas:</p>
+      <ul class="list-disc list-inside text-gray-800">
+        {% for e in enfermedades %}
+        <li><span class="font-semibold text-red-600">Enfermedad detectada:</span> {{ e }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% else %}
+    <div class="bg-white p-6 rounded-lg shadow-md border border-red-200 text-red-700 font-medium">
+      <p>No se pudo determinar una enfermedad con los síntomas proporcionados.</p>
+    </div>
+    {% endif %}
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-blue-700 text-white py-6 mt-10">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div>
+        <h2 class="font-bold text-lg mb-2">Clínica Salud Total</h2>
+        <p>Tu salud es nuestra prioridad. Atención de calidad con especialistas.</p>
+      </div>
+      <div>
+        <h2 class="font-bold text-lg mb-2">Contacto</h2>
+        <p>📍 Av. Principal 123, Lima, Perú</p>
+        <p>📞 (01) 234 5678</p>
+        <p>✉️ contacto@saludtotal.pe</p>
+      </div>
+      <div>
+        <h2 class="font-bold text-lg mb-2">Horario de Atención</h2>
+        <p>Lunes a Sábado: 8am - 8pm</p>
+        <p>Domingo: 9am - 2pm</p>
+      </div>
+    </div>
+    <div class="text-center text-sm text-blue-200 mt-4">
+      © 2025 Clínica Salud Total. Todos los derechos reservados.
+    </div>
+  </footer>
+
+</body>
+
+</html>

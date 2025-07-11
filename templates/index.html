@@ -1,6 +1,92 @@
-<h1>Selecciona un servicio</h1>
-<ul>
-    {% for s in servicios %}
-        <li><a href="/medicos?servicio={{ s }}">{{ s|capitalize }}</a></li>
-    {% endfor %}
-</ul>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clínica Salud Total</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="bg-blue-50 flex flex-col min-h-screen">
+
+    <!-- HEADER -->
+    <header class="bg-white shadow-md py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-6">
+            <div class="text-2xl font-bold text-blue-700">Clínica Salud Total</div>
+            <nav class="space-x-4 text-blue-700 font-medium">
+                <a href="/" class="hover:text-blue-500">Inicio</a>
+                <a href="/servicios" class="hover:text-blue-500">Servicios</a>
+                <a href="/medicos" class="hover:text-blue-500">Médicos</a>
+                <a href="/contacto" class="hover:text-blue-500">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="flex-grow flex items-center justify-center p-6 bg-blue-50">
+        <div class="bg-white shadow-2xl rounded-xl p-10 w-full max-w-4xl space-y-8">
+
+            <!-- Imagen de la clínica -->
+            <div class="flex justify-center">
+                <img src="https://img.freepik.com/vector-gratis/diseno-logotipo-hospital-vector-cruz-medica_53876-136743.jpg?semt=ais_hybrid&w=740"
+                    alt="Logo de la Clínica" class="h-24 object-contain">
+            </div>
+
+            <!-- Información institucional -->
+            <div class="text-center">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-2">Bienvenido a Clínica Salud Total</h2>
+                <p class="text-gray-600">
+                    Ofrecemos servicios médicos especializados con un enfoque humano y tecnología de vanguardia.
+                    Selecciona el área de atención médica que necesitas y reserva tu cita con los mejores profesionales.
+                </p>
+            </div>
+
+            <!-- Lista de servicios -->
+            <div>
+                <h1 class="text-3xl font-bold text-blue-700 mb-6 text-center">Servicios</h1>
+
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {% for s in servicios %}
+                    <div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+                        <a href="/medicos?servicio={{ s.nombre }}">
+                            <img src="{{ s.imagen }}" alt="{{ s.nombre }}" class="h-48 w-full object-cover">
+                            <div class="p-4 text-center">
+                                <h2 class="text-lg font-semibold text-blue-700 capitalize">{{ s.nombre }}</h2>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-blue-700 text-white py-6 mt-10">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div>
+                <h2 class="font-bold text-lg mb-2">Clínica Salud Total</h2>
+                <p>Tu salud es nuestra prioridad. Atención de calidad con especialistas.</p>
+            </div>
+            <div>
+                <h2 class="font-bold text-lg mb-2">Contacto</h2>
+                <p>📍 Av. Principal 123, Lima, Perú</p>
+                <p>📞 (01) 234 5678</p>
+                <p>✉️ contacto@saludtotal.pe</p>
+            </div>
+            <div>
+                <h2 class="font-bold text-lg mb-2">Horario de Atención</h2>
+                <p>Lunes a Sábado: 8am - 8pm</p>
+                <p>Domingo: 9am - 2pm</p>
+            </div>
+        </div>
+        <div class="text-center text-sm text-blue-200 mt-4">
+            © 2025 Clínica Salud Total. Todos los derechos reservados.
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -13,7 +13,8 @@ except Exception as e:
 
 @app.route("/")
 def index():
-    servicios = ["cardiologia", "dermatologia", "pediatria"]
+    resultados = list(prolog.query("servicio(M, I)"))
+    servicios = [{"nombre": r["M"], "imagen": r["I"]} for r in resultados]
     return render_template("index.html", servicios=servicios)
 
 @app.route("/medicos")
