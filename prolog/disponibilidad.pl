@@ -2,17 +2,17 @@ servicio(cardiologia).
 servicio(dermatologia).
 servicio(pediatria).
 
-medico(Juan, cardiologia).
-medico(Lucia, dermatologia).
-medico(Pedro, pediatria).
+medico(juan, cardiologia).
+medico(lucia, dermatologia).
+medico(pedro, pediatria).
 
-horario(dr_juan, '10:00').
-horario(dr_juan, '11:00').
-horario(dra_lucia, '09:00').
-horario(dra_lucia, '10:00').
-horario(dr_pedro, '13:00').
+horario(juan, '10:00').
+horario(juan, '11:00').
+horario(lucia, '09:00').
+horario(lucia, '10:00').
+horario(pedro, '13:00').
 
-reservado(dr_juan, '10:00'). 
+reservado(juan, '10:00'). 
 
 :- dynamic reservado/2.
 :- dynamic diagnostico/4.
