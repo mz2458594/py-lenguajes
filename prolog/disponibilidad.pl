@@ -1,9 +1,9 @@
 servicio(cardiologia, 'https://mimed.do/media/blogs/n9wMqeTQHYFZReCz.jpg').
 servicio(dermatologia, 'https://dermatologia-bagazgoitia.com/wp-content/uploads/2022/02/dermatologo-scaled.jpg').
 servicio(pediatria, 'https://www.shutterstock.com/image-vector/stethoscope-baby-pediatric-health-services-260nw-2498667177.jpg').
-servicio(ginecologia, 'https://www.saludsavia.com/contenido/assets/images/2022/02/ginecologia.jpg').
-servicio(traumatologia, 'https://www.traumatologiabogota.com.co/wp-content/uploads/2021/07/traumatologia.jpg').
-servicio(neurologia, 'https://cdn-3.expansion.mx/dims4/default/3dc6cb6/2147483647/strip/true/crop/1200x800+0+0/resize/1200x800!/quality/90/?url=https%3A%2F%2Fcdn-3.expansion.mx%2Fa0%2Fff%2F9a5ef4024b8592ec65f7e2a8039a%2Fneuro.jpg').
+servicio(ginecologia, 'https://img.freepik.com/vector-gratis/ilustracion-concepto-ginecologia_23-2148653904.jpg').
+servicio(traumatologia, 'https://centromedicoabc.com/storage/2024/06/traumatologia-y-ortopedia-que-es.webp').
+servicio(neurologia, 'https://mimed.do/media/blogs/sYZYzd35Y1l0nvRr.jpg').
 
 % Médicos y su especialidad
 medico(juan, cardiologia).
