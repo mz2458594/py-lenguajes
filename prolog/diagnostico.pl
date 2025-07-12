@@ -15,6 +15,32 @@ sintoma(alergia, estornudos).
 sintoma(alergia, picazon_ojos).
 sintoma(alergia, congestion).
 
+sintoma(dengue, fiebre).
+sintoma(dengue, dolor_muscular).
+sintoma(dengue, dolor_articulaciones).
+sintoma(dengue, sarpullido).
+sintoma(dengue, dolor_cabeza).
+
+sintoma(bronquitis, tos).
+sintoma(bronquitis, flema).
+sintoma(bronquitis, dolor_pecho).
+sintoma(bronquitis, dificultad_respirar).
+
+sintoma(faringitis, dolor_garganta).
+sintoma(faringitis, fiebre).
+sintoma(faringitis, dificultad_tragar).
+sintoma(faringitis, ganglios_inflamados).
+
+sintoma(asma, dificultad_respirar).
+sintoma(asma, sibilancias).
+sintoma(asma, opresion_pecho).
+sintoma(asma, tos_nocturna).
+
+sintoma(amigdalitis, dolor_garganta).
+sintoma(amigdalitis, fiebre).
+sintoma(amigdalitis, inflamacion_amigdalas).
+sintoma(amigdalitis, mal_aliento).
+
 tiene(Paciente, Enfermedad) :-
     sintomas_paciente(Paciente, SintomasPaciente),
     sintoma(Enfermedad, _),  % Genera enfermedades posibles (gripe, covid, alergia)
